@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas de Saúde - OsteoZen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F6D7A',
+                        secondary: '#D0A98F',
+                        accent: '#3A5A78'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-primary text-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Dicas para uma Vida Saudável</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto">Pequenas mudanças na sua rotina de postura e alimentação que fazem uma grande diferença.</p>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        </section>
+
+        <!-- Section Navigation Bar -->
+        <nav class="bg-white shadow-sm py-4 sticky top-0 z-10">
+            <div class="container mx-auto px-6 flex justify-center space-x-8">
+                <a href="#postura" class="text-primary hover:text-accent font-semibold text-lg transition duration-300">Dicas de Postura</a>
+                <a href="#alimentacao" class="text-primary hover:text-accent font-semibold text-lg transition duration-300">Dicas de Alimentação</a>
+            </div>
+        </nav>
+
+        <!-- Posture Tips Section -->
+        <section id="postura" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Dicas de Postura</h2>
+                    <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dica 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="archive" class="text-secondary w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Ao Sentar no Trabalho</h3>
+                        <p class="text-gray-700">Mantenha as costas retas e apoiadas no encosto da cadeira. Seus pés devem estar apoiados no chão e os joelhos em um ângulo de 90 graus. A tela do computador deve estar na altura dos olhos.</p>
+                    </div>
+                    <!-- Dica 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="smartphone" class="text-secondary w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Ao Usar o Celular</h3>
+                        <p class="text-gray-700">Evite inclinar a cabeça para baixo. Em vez disso, levante o celular até a altura dos olhos para manter o pescoço em uma posição neutra e evitar a "text neck".</p>
+                    </div>
+                    <!-- Dica 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
+                            <i data-feather="briefcase" class="text-secondary w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-4">Ao Carregar Peso</h3>
+                        <p class="text-gray-700">Distribua o peso igualmente. Se usar uma mochila, use as duas alças. Se carregar sacolas, divida o peso entre as duas mãos para não sobrecarregar um lado do corpo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutrition Tips Section -->
+        <section id="alimentacao" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Dicas de Alimentação</h2>
+                    <div class="w-24 h-1 bg-secondary mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="http://static.photos/food/1024x576/1" alt="Alimentos saudáveis" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Nutrição para um Corpo Equilibrado</h3>
+                        <p class="text-gray-700 mb-6">Uma alimentação equilibrada é fundamental para a saúde dos músculos, ossos e articulações. Alimentos anti-inflamatórios podem ajudar a reduzir dores e a melhorar a recuperação do corpo.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i data-feather="droplet" class="text-secondary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>
+                                    <strong>Hidrate-se:</strong> Beba bastante água ao longo do dia. A água é essencial para a saúde dos discos intervertebrais e a lubrificação das articulações.
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="sunrise" class="text-secondary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>
+                                    <strong>Cálcio e Vitamina D:</strong> Consuma alimentos ricos em cálcio (leite, iogurte, folhas verdes) e exponha-se ao sol moderadamente para a produção de Vitamina D, essenciais para a saúde óssea.
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="anchor" class="text-secondary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>
+                                    <strong>Ômega-3:</strong> Inclua fontes de ômega-3 na sua dieta, como peixes (salmão, sardinha), chia e linhaça, que possuem propriedades anti-inflamatórias naturais.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 md:py-24 bg-primary text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para cuidar da sua saúde?</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">A combinação de boa postura, alimentação e osteopatia pode transformar seu bem-estar.</p>
+                <a href="https://wa.me/SEUNUMEROAQUI?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="bg-secondary hover:bg-secondary/90 text-primary font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52s-.669-1.621-.916-2.227c-.247-.606-.5-.52-.669-.52-.173 0-.371.025-.57.025-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+                    Agende sua consulta
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+```
+
+### Como usar:
+
+1.  Crie um novo arquivo chamado `dicas.html` na mesma pasta que o seu `index.html`.
+2.  Copie e cole o código acima nesse novo arquivo.
+3.  Certifique-se de que as pastas `components` (com `navbar.js` e `footer.js`) e o arquivo `style.css` estão no mesmo diretório para que a página funcione corretamente.
+
+Esta nova página reutiliza os componentes de navegação e rodapé, a paleta de cores e o estilo geral, garantindo uma experiência consistente para o usuário em todo o site.
+
+Se precisar de mais alguma coisa, é só pedir!
+
+<!--
+[PROMPT_SUGGESTION]Adicione um link para a nova página de dicas na barra de navegação.[/PROMPT_SUGGESTION]
+[PROMPT_SUGGESTION]Crie uma seção de "Perguntas Frequentes" (FAQ) na página principal.[/PROMPT_SUGGESTION]
+-->

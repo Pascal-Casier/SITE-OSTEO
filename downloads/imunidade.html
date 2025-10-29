@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imunidade - 20 Alimentos Avaliados</title>
+    <style>
+        /* Styles from index.html for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #0a0a0a;
+            color: white;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .content-section p, .content-section li {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            list-style-position: inside;
+            margin-top: 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(123, 47, 247, 0.05) 100%);
+            border-left: 4px solid #00d4ff;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            color: #e0e0e0;
+        }
+
+        /* Table Styles */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 4rem 0;
+            font-size: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .styled-table thead tr {
+            background-color: #00d4ff;
+            color: #0a0a0a;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .styled-table th, .styled-table td {
+            padding: 15px 20px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #1a1a2e;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #16213e;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #00d4ff;
+        }
+
+        .styled-table .note {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .styled-table .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 15, 1) 100%);
+            color: #808080;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ OSTEOPATIA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>20 Alimentos para Reforçar sua Imunidade</h1>
+            <p>Uma lista de alimentos avaliados de 0 a 10 com base no seu potencial para fortalecer o sistema imunológico.</p>
+        </section>
+
+        <section class="content-section">
+            <p>Cada alimento recebeu uma nota considerando nutrientes-chave como vitamina C, zinco, antioxidantes, probióticos e propriedades anti-inflamatórias. Alguns surpreendem pelo alto impacto — outros, pelo efeito negativo.</p>
+            <div class="info-box">
+                <p><strong>Objetivo:</strong> Informar e inspirar escolhas alimentares mais conscientes para apoiar a saúde imunológica de forma prática e acessível.</p>
+            </div>
+
+            <h2>Lista dos 20 Alimentos Avaliados</h2>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Alimento</th>
+                        <th>Nota (/10)</th>
+                        <th>Explicação e Efeito "Choque"</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Alho</td><td class="note">10</td><td>Antibacteriano natural (alicina), estimula os glóbulos brancos. <span class="highlight">Campeão absoluto!</span></td></tr>
+                    <tr><td>Cúrcuma</td><td class="note">9</td><td>Anti-inflamatório potente graças à curcumina. Combine com pimenta-do-reino.</td></tr>
+                    <tr><td>Kiwi</td><td class="note">9</td><td>Ultra-rico em vitamina C, <span class="highlight">supera a laranja!</span> Surpresa nutritiva.</td></tr>
+                    <tr><td>Gengibre</td><td class="note">8</td><td>Antiviral e anti-inflamatório. Perfeito em chás ou infusões.</td></tr>
+                    <tr><td>Brócolis</td><td class="note">8</td><td>Vitamina C, E e antioxidantes. Melhor cru ou levemente cozido no vapor.</td></tr>
+                    <tr><td>Iogurte probiótico</td><td class="note">8</td><td>Reforça a flora intestinal — <strong>70% da imunidade está no intestino</strong>.</td></tr>
+                    <tr><td>Amêndoas</td><td class="note">7</td><td>Vitamina E e zinco, com moderação calórica.</td></tr>
+                    <tr><td>Pimentões</td><td class="note">7</td><td>Mais vitamina C que frutas cítricas — <span class="highlight">choque para muitos!</span></td></tr>
+                    <tr><td>Cogumelos</td><td class="note">7</td><td>Betaglucanos que estimulam o sistema imune.</td></tr>
+                    <tr><td>Salmão</td><td class="note">7</td><td>Ômega-3 anti-inflamatório. Prefira o selvagem.</td></tr>
+                    <tr><td>Espinafre</td><td class="note">6</td><td>Antioxidantes, mas cozido reduz benefícios (ácido oxálico).</td></tr>
+                    <tr><td>Mel</td><td class="note">6</td><td>Antibacteriano natural, mas use com moderação.</td></tr>
+                    <tr><td>Tomates</td><td class="note">6</td><td>Licopeno antioxidante. Melhor quando cozidos.</td></tr>
+                    <tr><td>Frango</td><td class="note">5</td><td>Proteínas e zinco, mas excesso de gordura reduz eficácia.</td></tr>
+                    <tr><td>Arroz branco</td><td class="note">4</td><td>Energia rápida, mas alto índice glicêmico prejudica a imunidade.</td></tr>
+                    <tr><td>Manteiga</td><td class="note">3</td><td>Gorduras saturadas em excesso são pró-inflamatórias — <span class="highlight">surpresa negativa</span>.</td></tr>
+                    <tr><td>Álcool</td><td class="note">2</td><td>Prejudica as defesas a longo prazo. Choque para quem acha "saudável".</td></tr>
+                    <tr><td>Fast-food</td><td class="note">2</td><td>Gorduras trans e aditivos destroem a flora intestinal.</td></tr>
+                    <tr><td>Doces</td><td class="note">1</td><td>Açúcar puro suprime temporariamente os glóbulos brancos.</td></tr>
+                    <tr><td>Bebidas energéticas</td><td class="note">0</td><td>Cafeína + açúcar = <span class="highlight">desastre imunológico</span>. Grande choque!</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Pontos-chave e Conclusão</h2>
+            <ul>
+                <li><strong>Surpresas positivas:</strong> Kiwi e pimentões superam laranja em vitamina C. Manteiga e álcool têm notas baixas (3 e 2), assim como energéticos (0) — vistos como inofensivos por muitos.</li>
+                <li><strong>Mensagem final:</strong> Priorize alimentos com nota 7 ou mais para uma imunidade de elite. Evite bebidas energéticas e fast-food.</li>
+                <li><strong>Dica prática:</strong> Para integrar essas ideias ao seu dia a dia, experimente receitas com alho, kiwi ou cúrcuma. Cuide-se com consciência!</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Observação importante:</strong> Esta lista é educativa e baseada em evidências nutricionais consolidadas. Não substitui consulta médica. 🌿</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Osteopatia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta para promover sua saúde e bem-estar.</p>
+    </footer>
+</body>
+</html>

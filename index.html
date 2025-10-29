@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteopatia - Saúde e Bem-Estar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Info Doutor */
+        .doctor-info {
+            padding-top: 100px; /* Espaço para o header fixo */
+            padding-bottom: 1rem;
+            background: #151520;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .doctor-info p {
+            color: #c0c0c0;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 30, 0.9) 100%),
+                radial-gradient(circle at 20% 50%, rgba(123, 47, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                #0a0a0a;
+            color: white;
+            padding: 5rem 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                );
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem; /* Espace entre l'icône et le texte */
+            transition: all 0.4s;
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* O que é Osteopatia */
+        .sobre {
+            background: linear-gradient(180deg, #0a0a0a 0%, #151520 100%);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .sobre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.5), transparent);
+        }
+
+        .sobre-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sobre-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .sobre-image {
+            background-image: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 47, 247, 0.1) 100%), url('images/osteo1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 10px 50px rgba(0, 212, 255, 0.2),
+                inset 0 0 50px rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sobre-image::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Indicações */
+        .indicacoes {
+            background: #0a0a0a;
+        }
+
+        .indicacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .indicacao-card {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.8) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .indicacao-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #00d4ff, #7b2ff7);
+        }
+
+        .indicacao-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .indicacao-card h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .indicacao-card h3 img {
+            height: 1.4em; /* Ajuste a altura da imagem para corresponder ao texto */
+            margin-right: 0.5em; /* Adiciona um espaço entre a imagem e o texto */
+            vertical-align: middle; /* Alinha a imagem verticalmente com o texto */
+        }
+
+        .indicacao-card ul {
+            list-style: none;
+            color: #b0b0b0;
+        }
+
+        .indicacao-card li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .indicacao-card li:before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .indicacao-card:hover li {
+            color: #e0e0e0;
+        }
+
+        /* Técnicas */
+        .tecnicas {
+            background: linear-gradient(180deg, #0a0a0a 0%, #151520 100%);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .tecnicas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(123, 47, 247, 0.5), transparent);
+        }
+
+        .tecnicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 2rem auto 0;
+        }
+
+        .tecnica-card {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.6) 0%, rgba(20, 20, 30, 0.6) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tecnica-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(123, 47, 247, 0.3);
+            border-color: rgba(123, 47, 247, 0.3);
+        }
+
+        .tecnica-image {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(123, 47, 247, 0.2) 100%);
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tecnica-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .tecnica-card:hover .tecnica-image::before {
+            transform: translateX(100%);
+        }
+
+        .tecnica-image img {
+            height: 80px; /* Tamanho da imagem */
+            width: 80px;
+        }
+
+        .tecnica-content {
+            padding: 2rem;
+        }
+
+        .tecnica-content h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .tecnica-content p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        /* Registro Osteopatas */
+        .registro-osteopatas {
+            background: linear-gradient(180deg, #151520 0%, #0a0a0a 100%);
+            text-align: center;
+            position: relative;
+            padding: 5rem 2rem;
+        }
+
+        .registro-osteopatas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.5), transparent);
+        }
+
+        .registro-osteopatas p {
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .registro-osteopatas .cta-button {
+            background: transparent;
+            border: 2px solid #00d4ff;
+        }
+        .registro-osteopatas .cta-button:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        /* Contato */
+        .contato {
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 30, 0.95) 100%),
+                radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .contato::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        }
+
+        .contato h2 {
+            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contato-info {
+            margin-top: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .contato-info p {
+            margin: 1.5rem 0;
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+
+        .contato-info p:hover {
+            color: #00d4ff;
+        }
+
+        .map-container {
+            max-width: 800px; /* Définit la largeur maximale de la carte */
+            margin: 3rem auto; /* Centre le conteneur horizontalement */
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.1);
+            width: 100%; /* Assure la responsivité sur les petits écrans */
+        }
+
+        .map-container iframe {
+            /* filter: grayscale(1) invert(0.9) contrast(0.8); */
+            display: block; /* Pour enlever l'espace en dessous de l'iframe */
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 15, 1) 100%);
+            color: #808080;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .tecnicas-grid,
+            .indicacoes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ OSTEOPATIA</div>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#indicacoes">Indicações</a></li>
+                <li><a href="index.html#tecnicas">Técnicas</a></li>
+                <li><a href="index.html#registro">Registro</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="doctor-info">
+        <p>Dr. Pascal H. J. Casier D.O.M.R.Br.O. 51 (Diplomado em Osteopatia, membro do Registro Brasileiro dos Osteopatas)</p>
+    </section>
+
+    <section class="hero" id="inicio">
+        <h1>Osteopatia: Cuidando do Corpo Como Um Todo</h1>
+        <p>Tratamento manual especializado para restaurar o equilíbrio e a saúde do seu corpo</p>
+        <a href="https://wa.me/5563981179499?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="cta-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52s-.669-1.621-.916-2.227c-.247-.606-.5-.52-.669-.52-.173 0-.371.025-.57.025-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            Agende sua Consulta
+        </a>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="sobre-content">
+            <div class="sobre-text">
+                <h2>O que é Osteopatia?</h2>
+                <p>A Osteopatia é uma abordagem terapêutica manual que considera o corpo como uma unidade funcional integrada. Através de técnicas específicas, o osteopata busca identificar e tratar as causas dos sintomas, não apenas suas manifestações.</p>
+                <p>Com base em princípios científicos e uma visão holística do corpo humano, a osteopatia promove a autocura, restaurando o equilíbrio estrutural e funcional do organismo.</p>
+                <p>É indicada para pessoas de todas as idades, desde bebês até idosos, oferecendo uma alternativa segura e eficaz para diversos problemas de saúde.</p>
+            </div>
+            <div class="sobre-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="indicacoes" id="indicacoes">
+        <h2>Indicações</h2>
+        <div class="indicacoes-grid">
+            <div class="indicacao-card">
+                <h3>🦴 Sistema Musculoesquelético</h3>
+                <ul>
+                    <li>Dores nas costas e coluna</li>
+                    <li>Hérnias de disco</li>
+                    <li>Dores cervicais</li>
+                    <li>Lombalgia e ciática</li>
+                    <li>Tendinites e bursites</li>
+                    <li>Problemas articulares</li>
+                </ul>
+            </div>
+
+            <div class="indicacao-card">
+                <h3>🧠 Sistema Neurológico</h3>
+                <ul>
+                    <li>Dores de cabeça e enxaquecas</li>
+                    <li>Tonturas e vertigens</li>
+                    <li>Neuralgia do trigêmeo</li>
+                    <li>Parestesias</li>
+                    <li>Síndrome do túnel do carpo</li>
+                </ul>
+            </div>
+
+            <div class="indicacao-card">
+                <h3>
+                    <img src="images/icons8-intestino-64.png" alt="Ícone de intestino">Sistema Visceral
+                </h3>
+                <ul>
+                    <li>Problemas digestivos</li>
+                    <li>Refluxo gastroesofágico</li>
+                    <li>Constipação intestinal</li>
+                    <li>Distúrbios menstruais</li>
+                    <li>Alterações respiratórias</li>
+                </ul>
+            </div>
+
+            <div class="indicacao-card">
+                <h3>👶 Saúde Infantil</h3>
+                <ul>
+                    <li>Cólicas do bebê</li>
+                    <li>Plagiocefalia</li>
+                    <li>Torcicolo congênito</li>
+                    <li>Dificuldades de amamentação</li>
+                    <li>Distúrbios do sono</li>
+                </ul>
+            </div>
+
+            <div class="indicacao-card">
+                <h3>⚖️ Equilíbrio e Postura</h3>
+                <ul>
+                    <li>Escolioses</li>
+                    <li>Problemas posturais</li>
+                    <li>Disfunções da ATM</li>
+                    <li>Bruxismo</li>
+                    <li>Desequilíbrios biomecânicos</li>
+                </ul>
+            </div>
+
+            <div class="indicacao-card">
+                <h3>🤰 Gestação e Pós-Parto</h3>
+                <ul>
+                    <li>Dores lombares na gestação</li>
+                    <li>Preparação para o parto</li>
+                    <li>Recuperação pós-parto</li>
+                    <li>Diástase abdominal</li>
+                    <li>Disfunções do assoalho pélvico</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="tecnicas" id="tecnicas">
+        <h2>Técnicas Utilizadas</h2>
+        <div class="tecnicas-grid">
+            <div class="tecnica-card">
+                <div class="tecnica-image">🦴</div>
+                <div class="tecnica-content"><h3>Osteopatia Estrutural</h3><p>Técnicas aplicadas ao sistema musculoesquelético, incluindo manipulações articulares, mobilizações e técnicas de tecidos moles. Visa restaurar a mobilidade e função das articulações, músculos e ligamentos.</p></div>
+            </div>
+
+            <div class="tecnica-card">
+                <div class="tecnica-image"><img src="images/icons8-intestino-64.png" alt="Ícone de intestino"></div>
+                <div class="tecnica-content">
+                    <h3>Osteopatia Visceral</h3>
+                    <p>Abordagem que trabalha com os órgãos internos e suas relações com o sistema musculoesquelético. Utiliza mobilizações suaves para melhorar a função visceral e restaurar a harmonia entre os sistemas do corpo.</p>
+                </div>
+            </div>
+
+            <div class="tecnica-card">
+                <div class="tecnica-image"><img src="images/skull.png" alt="Ícone de crânio"></div>
+                <div class="tecnica-content">
+                    <h3>Osteopatia Craniana</h3>
+                    <p>Técnicas delicadas aplicadas no crânio e sacro, trabalhando com o ritmo craniano e o sistema de membranas que envolvem o sistema nervoso central. Indicada para cefaleias, estresse e desequilíbrios neurológicos.</p>
+                </div>
+            </div>
+
+            <div class="tecnica-card">
+                <div class="tecnica-image">🔄</div>
+                <div class="tecnica-content">
+                    <h3>Técnicas Funcionais</h3>
+                    <p>Abordagem suave que trabalha com os padrões de movimento do corpo, buscando pontos de equilíbrio e permitindo que o próprio organismo encontre sua autocorreção através de posicionamentos específicos.</p>
+                </div>
+            </div>
+
+            <div class="tecnica-card">
+                <div class="tecnica-image">💆</div>
+                <div class="tecnica-content">
+                    <h3>Liberação Miofascial</h3>
+                    <p>Técnicas aplicadas ao sistema fascial, a rede de tecido conjuntivo que envolve todas as estruturas do corpo. Promove o relaxamento das tensões fasciais e melhora a circulação e mobilidade.</p>
+                </div>
+            </div>
+
+            <div class="tecnica-card">
+                <div class="tecnica-image"><img src="images/muscle.png" alt="Ícone de músculo"></div>
+                <div class="tecnica-content">
+                    <h3>Técnicas de Energia Muscular</h3>
+                    <p>Utiliza contrações musculares voluntárias do paciente em direções específicas para normalizar função articular, alongar músculos encurtados e fortalecer músculos enfraquecidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="registro-osteopatas" id="registro">
+        <h2>Registro Brasileiro de Osteopatas</h2>
+        <p>
+            O Registro Brasileiro de Osteopatas (RBO) é a entidade que certifica e regula a profissão no Brasil, garantindo que os profissionais listados possuam a formação adequada e sigam os mais altos padrões éticos. Verificar a qualificação de um profissional no RBO é uma garantia de segurança e qualidade no seu tratamento.
+        </p>
+        <a href="https://registrodososteopatas.com.br/" target="_blank" rel="noopener noreferrer" class="cta-button">
+            Visitar o RBO
+        </a>
+    </section>
+
+    <section class="contato" id="contato">
+        <h2>Entre em Contato</h2>
+        <div class="contato-info">
+            <p>📱 Telefone: 55 63 9 8117 9499</p>
+            <p>📧 Email: pascal.casier@yahoo.com.br</p>
+            <p>⚡ Atendimento em Palmas - Tocantins</p>
+        </div>
+        <div class="map-container">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d981.7355016046228!2d-48.34198702405138!3d-10.185365217763376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDExJzA2LjkiUyA0OMKwMjAnMzEuNCJX!5e0!3m2!1sfr!2sbr!4v1761743079246!5m2!1sfr!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="https://wa.me/5563981179499?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="cta-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52s-.669-1.621-.916-2.227c-.247-.606-.5-.52-.669-.52-.173 0-.371.025-.57.025-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            Agendar Consulta
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Osteopatia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta para promover sua saúde e bem-estar.</p>
+    </footer>
+</body>
+</html>

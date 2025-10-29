@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Dicas e Materiais</title>
+    <style>
+        /* Copie de tous les styles de index.html pour la cohérence */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section (adapté) */
+        .hero {
+            background: #0a0a0a;
+            color: white;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+        }
+
+        /* Section Downloads */
+        .downloads-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.8) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .download-card h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .download-card p {
+            color: #b0b0b0;
+            flex-grow: 1; /* Fait en sorte que le texte pousse le bouton vers le bas */
+            margin-bottom: 2rem;
+        }
+
+        .download-button {
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .download-button:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 15, 1) 100%);
+            color: #808080;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ OSTEOPATIA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Materiais para Download</h1>
+            <p>Acesse guias e dicas em PDF para cuidar da sua saúde no dia a dia.</p>
+        </section>
+
+        <section class="downloads-section">
+            <div class="downloads-grid">
+                <!-- Exemplo de Card de Download 1 -->
+                <div class="download-card">
+                    <h3>📄 Guia de Postura no Trabalho</h3>
+                    <p>Um guia completo com dicas para ajustar sua cadeira, mesa e monitor, evitando dores nas costas e no pescoço durante o trabalho.</p>
+                    <a href="downloads/guia-postura.pdf" download class="download-button">Baixar PDF</a>
+                </div>
+
+                <!-- Exemplo de Card de Download 2 -->
+                <div class="download-card">
+                    <h3>📄 Alongamentos para o Dia a Dia</h3>
+                    <p>Uma série de alongamentos simples que você pode fazer em casa ou no escritório para aliviar a tensão muscular e melhorar a flexibilidade.</p>
+                    <a href="downloads/guia-alongamentos.pdf" download class="download-button">Baixar PDF</a>
+                </div>
+
+                <!-- Exemplo de Card de Download 3 -->
+                <div class="download-card">
+                    <h3>📄 Dicas de Alimentação Anti-inflamatória</h3>
+                    <p>Descubra quais alimentos podem ajudar a combater a inflamação no corpo, auxiliando no tratamento de dores crônicas.</p>
+                    <a href="downloads/guia-alimentacao.pdf" download class="download-button">Baixar PDF</a>
+                </div>
+
+                <!-- Adicione mais cards de download aqui conforme necessário -->
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Osteopatia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta para promover sua saúde e bem-estar.</p>
+    </footer>
+</body>
+</html>
