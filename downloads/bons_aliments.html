@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Alimentos de Consumo Livre - Zero Impacto Metabólico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%), #0a0a0a;
+            color: white;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.05) 0%, rgba(39, 174, 96, 0.05) 100%);
+            border-left: 4px solid #2ecc71;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            color: #e0e0e0;
+        }
+
+        .secret-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.05) 100%);
+            border: 2px solid #3498db;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .secret-box h3 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .secret-box p {
+            color: #e0e0e0;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .food-card {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+            border-color: #2ecc71;
+        }
+
+        .food-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .food-card h3 {
+            color: #2ecc71;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .food-card .emoji {
+            font-size: 1.8rem;
+        }
+
+        .food-card p {
+            color: #b0b0b0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .benefit-tag {
+            display: inline-block;
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3rem 0;
+            font-size: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .comparison-table thead tr {
+            background-color: #2ecc71;
+            color: #0a0a0a;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px 20px;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #1a1a2e;
+        }
+
+        .comparison-table tbody tr:nth-of-type(even) {
+            background-color: #16213e;
+        }
+
+        .comparison-table tbody tr:last-of-type {
+            border-bottom: 2px solid #2ecc71;
+        }
+
+        .comparison-table .highlight {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .key-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .key-benefit {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.05) 0%, rgba(39, 174, 96, 0.05) 100%);
+            border-left: 3px solid #2ecc71;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .key-benefit h4 {
+            color: #2ecc71;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .key-benefit p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .download-pdf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #2ecc71;
+            color: #2ecc71;
+            background: transparent;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .download-pdf-button:hover {
+            background: rgba(46, 204, 113, 0.1);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 15, 1) 100%);
+            color: #808080;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ OSTEOPATIA</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../downloads.html">Downloads</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>🥕 15 Alimentos de Consumo Livre</h1>
+            <p>Descubra os alimentos com impacto metabólico quase nulo — você pode consumi-los à vontade sem estimular insulina ou ativar a fome.</p>
+             <a href="bons_aliments.pdf" download class="download-pdf-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Baixar PDF
+            </a>
+        </section>
+
+        <section class="content-section">
+            <div class="secret-box">
+                <h3>🔬 O Segredo do Impacto Metabólico Zero</h3>
+                <p>Estes alimentos possuem características únicas que os tornam verdadeiros aliados do metabolismo:</p>
+                <p><strong>✓ Riqueza em fibras</strong> — retardam absorção e prolongam saciedade<br>
+                <strong>✓ Baixa densidade calórica</strong> — grande volume com poucas calorias<br>
+                <strong>✓ Mínima resposta insulínica</strong> — não provocam picos de glicose<br>
+                <strong>✓ Alto efeito térmico</strong> — o corpo gasta energia para digeri-los</p>
+            </div>
+
+            <h2>Os 15 Alimentos Liberados</h2>
+
+            <div class="food-grid">
+                <div class="food-card">
+                    <h3><span class="emoji">🥬</span> Aipo (Salsão)</h3>
+                    <p>Alto efeito térmico e fibras insolúveis. O corpo gasta quase mais energia para digeri-lo do que ele armazena — um verdadeiro "caloria negativa".</p>
+                    <span class="benefit-tag">Efeito Térmico Máximo</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥒</span> Pepino</h3>
+                    <p>Apenas 10 calorias por 100g. Promove hidratação profunda e tem zero resposta insulínica. Perfeito para saciedade sem consequências metabólicas.</p>
+                    <span class="benefit-tag">10 cal/100g</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥒</span> Abobrinha</h3>
+                    <p>Rica em fibra solúvel que retarda o esvaziamento gástrico, atuando como um saciador natural prolongado.</p>
+                    <span class="benefit-tag">Saciedade Prolongada</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🍆</span> Berinjela (grelhada sem óleo)</h3>
+                    <p>Leve efeito prebiótico alimentando bactérias benéficas e baixíssima densidade calórica. Suporte ao microbioma intestinal.</p>
+                    <span class="benefit-tag">Prebiótico Natural</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥦</span> Couve-flor</h3>
+                    <p>Índice glicêmico muito baixo e efeito positivo no microbioma. Versátil e extremamente saciante.</p>
+                    <span class="benefit-tag">IG Baixíssimo</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥦</span> Brócolis</h3>
+                    <p>Contém sulforafano com potente ação anti-inflamatória, além de fibras que prolongam a saciedade por horas.</p>
+                    <span class="benefit-tag">Sulforafano</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🍄</span> Cogumelos</h3>
+                    <p>Baixo teor de carboidratos e ricos em glutationa, um dos antioxidantes mais importantes do corpo humano.</p>
+                    <span class="benefit-tag">Rico em Glutationa</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🫑</span> Pimentão</h3>
+                    <p>Rico em Vitamina C e flavonoides antioxidantes. Não provoca picos glicêmicos e adiciona cor e sabor às refeições.</p>
+                    <span class="benefit-tag">Alto em Vitamina C</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥬</span> Alface</h3>
+                    <p>Baixa densidade energética e sua mastigação prolongada é extremamente interessante para sinalização de saciedade cerebral.</p>
+                    <span class="benefit-tag">Saciedade pela Mastigação</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥬</span> Espinafre</h3>
+                    <p>Rico em magnésio e nitrato, que levam a uma melhor sensibilidade à insulina. Suporte metabólico comprovado.</p>
+                    <span class="benefit-tag">Melhora Sensibilidade Insulínica</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥬</span> Repolho Fermentado (Chucrute)</h3>
+                    <p>Atua como probiótico natural, alimentando o microbioma com bactérias benéficas. 70% da imunidade está no intestino.</p>
+                    <span class="benefit-tag">Probiótico Natural</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🥬</span> Repolho Cru</h3>
+                    <p>Sua textura crocante e mastigação prolongada aumentam significativamente a saciedade mecânica e sensorial.</p>
+                    <span class="benefit-tag">Saciedade Mecânica</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🍓</span> Frutas Vermelhas</h3>
+                    <p>Morangos e mirtilos têm índice glicêmico moderado apesar do sabor doce. Contêm antocianinas com potente ação anti-inflamatória.</p>
+                    <span class="benefit-tag">Antocianinas</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🍊</span> Toranja (Grapefruit)</h3>
+                    <p>Melhora a eficácia da insulina e possui efeito saciador natural. Estudos mostram benefícios no controle glicêmico.</p>
+                    <span class="benefit-tag">Melhora Eficácia Insulínica</span>
+                </div>
+
+                <div class="food-card">
+                    <h3><span class="emoji">🍉</span> Melancia</h3>
+                    <p>Rica em L-citrulina (vasodilatadora natural) e hidratação. Apesar do IG mais alto, densidade calórica baixíssima compensa.</p>
+                    <span class="benefit-tag">L-Citrulina</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p><strong>🌟 Menção Especial: Konjac e Glucomanano</strong></p>
+                <p>Fibra gelificante que retarda drasticamente a absorção de nutrientes. É quase indigerível, criando volume e saciedade sem calorias. Usado em massas low-carb.</p>
+            </div>
+
+            <h2>Características Comuns destes Alimentos</h2>
+
+            <div class="key-benefits">
+                <div class="key-benefit">
+                    <h4>🔥 Efeito Térmico Elevado</h4>
+                    <p>O corpo gasta mais energia para digeri-los, resultando em balanço calórico praticamente neutro.</p>
+                </div>
+
+                <div class="key-benefit">
+                    <h4>📉 Resposta Insulínica Mínima</h4>
+                    <p>Não provocam picos de glicose e insulina, mantendo estabilidade metabólica.</p>
+                </div>
+
+                <div class="key-benefit">
+                    <h4>🧵 Alta Densidade de Fibras</h4>
+                    <p>Fibras solúveis e insolúveis que prolongam saciedade e alimentam microbioma.</p>
+                </div>
+
+                <div class="key-benefit">
+                    <h4>💧 Baixa Densidade Calórica</h4>
+                    <p>Grande volume com poucas calorias — você fica satisfeito com mínimo impacto energético.</p>
+                </div>
+
+                <div class="key-benefit">
+                    <h4>🦠 Suporte ao Microbioma</h4>
+                    <p>Muitos atuam como prebióticos ou probióticos, fortalecendo flora intestinal.</p>
+                </div>
+
+                <div class="key-benefit">
+                    <h4>🛡️ Ação Antioxidante</h4>
+                    <p>Ricos em compostos que combatem inflamação e estresse oxidativo.</p>
+                </div>
+            </div>
+
+            <h2>Comparativo: Impacto Metabólico</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Alimentos Livres</th>
+                        <th>Alimentos Problemáticos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Resposta Insulínica</td>
+                        <td class="highlight">Mínima ou nula</td>
+                        <td>Elevada (pães, doces, massas)</td>
+                    </tr>
+                    <tr>
+                        <td>Densidade Calórica</td>
+                        <td class="highlight">Muito baixa (10-50 cal/100g)</td>
+                        <td>Alta (300-500+ cal/100g)</td>
+                    </tr>
+                    <tr>
+                        <td>Efeito na Saciedade</td>
+                        <td class="highlight">Prolongado (horas)</td>
+                        <td>Curto (minutos a 1 hora)</td>
+                    </tr>
+                    <tr>
+                        <td>Teor de Fibras</td>
+                        <td class="highlight">Alto</td>
+                        <td>Baixo ou inexistente</td>
+                    </tr>
+                    <tr>
+                        <td>Índice Glicêmico</td>
+                        <td class="highlight">Baixo (10-35)</td>
+                        <td>Alto (70-100+)</td>
+                    </tr>
+                    <tr>
+                        <td>Efeito no Microbioma</td>
+                        <td class="highlight">Positivo (prebiótico/probiótico)</td>
+                        <td>Negativo (inflamação)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="secret-box">
+                <h3>💡 Como Usar Esta Lista no Dia a Dia</h3>
+                <p><strong>1. Base das Refeições:</strong> Use estes alimentos como volume principal dos pratos. Você pode comer até sentir-se satisfeito sem preocupação.</p>
+                <p><strong>2. Lanches Estratégicos:</strong> Pepino, aipo e pimentão são perfeitos para lanches entre refeições — saciedade sem impacto metabólico.</p>
+                <p><strong>3. Substituições Inteligentes:</strong> Troque massas por abobrinha espaguete, arroz por couve-flor ralada, batatas por cogumelos.</p>
+                <p><strong>4. Aumento de Volume:</strong> Adicione estes alimentos às refeições para aumentar volume sem adicionar calorias significativas.</p>
+                <p><strong>5. Preparação Adequada:</strong> Consuma crus quando possível (mastigação aumenta saciedade) ou cozidos no vapor (preserva nutrientes).</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>⚠️ Nota Importante:</strong> "Consumo livre" significa que você pode comer até a saciedade sem preocupação com impacto metabólico significativo. Isso não substitui uma dieta equilibrada e variada. Inclua também proteínas adequadas e gorduras saudáveis em suas refeições. Consulte sempre um nutricionista para orientação personalizada. 🌿</p>
+            </div>
+
+            <h2>Conclusão</h2>
+
+            <div class="info-box">
+                <p><strong>Liberdade Metabólica Real:</strong> Estes 15 alimentos representam verdadeira liberdade alimentar. Graças à combinação única de fibras, baixa densidade calórica e mínima resposta insulínica, você pode consumi-los à vontade sem culpa ou consequências metabólicas negativas.</p>
+                <p>O segredo está em entender que nem todas as calorias são iguais — o impacto metabólico importa mais do que simplesmente contar calorias. Priorize estes alimentos no seu dia a dia e experimente a diferença na saciedade, energia e controle de peso.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Osteopatia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta para promover sua saúde e bem-estar.</p>
+    </footer>
+</body>
+</html>
