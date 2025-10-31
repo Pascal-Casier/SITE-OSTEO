@@ -1,0 +1,48 @@
+{
+  "users": {
+    "pas": {
+      "passwordHash": "7062f3b64753f86b6c0507d84eac54254d85d2a38653c896024c9a3bb12e2579",
+      "id": "user_1761828049766"
+    }
+  },
+  "patients": [
+    {
+      "id": "patient_1678886400000",
+      "name": "Olivia Chen",
+      "dateOfBirth": "1988-05-21",
+      "address": "123 Main St, Anytown, USA",
+      "gender": "Female",
+      "email": "olivia.chen@example.com",
+      "profession": "Software Engineer",
+      "phone": "555-0101",
+      "cpf": "123.456.789-10",
+      "administrativeNotes": "First visit. Referred by Dr. Smith.",
+      "photo": "https://i.pravatar.cc/150?u=olivia.chen@example.com",
+      "emergencyContact": "Ben Carter (Husband) - 555-0102",
+      "allergies": "None",
+      "preExistingConditions": "Asthma",
+      "treatments": [],
+      "registrationDate": "2023-03-15",
+      "status": "Active"
+    },
+    {
+      "id": "patient_1678886400001",
+      "name": "Benjamin Carter",
+      "dateOfBirth": "1976-11-30",
+      "address": "456 Oak Ave, Anytown, USA",
+      "gender": "Male",
+      "email": "ben.carter@example.com",
+      "profession": "Architect",
+      "phone": "555-0103",
+      "cpf": "987.654.321-00",
+      "administrativeNotes": "",
+      "photo": "https://i.pravatar.cc/150?u=ben.carter@example.com",
+      "emergencyContact": "Olivia Chen (Wife) - 555-0101",
+      "allergies": "None",
+      "preExistingConditions": "",
+      "treatments": [],
+      "registrationDate": "2023-04-01",
+      "status": "Active"
+    }
+  ]
+}
