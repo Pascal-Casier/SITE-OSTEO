@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buriti - O Poder Metabólico da Amazônia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(218, 165, 32, 0.05) 100%), #0a0a0a;
+            color: white;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff8c00 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ff8c00 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .content-section h3 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem 0;
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(218, 165, 32, 0.05) 100%);
+            border-left: 4px solid #ff8c00;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            color: #e0e0e0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(218, 165, 32, 0.1) 100%);
+            border: 2px solid #ff8c00;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(255, 140, 0, 0.2);
+        }
+
+        .highlight-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(20, 20, 25, 0.95) 100%);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+        }
+
+        .benefit-card h4 {
+            color: #ff8c00;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 4rem 0;
+            font-size: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .comparison-table thead tr {
+            background-color: #ff8c00;
+            color: #0a0a0a;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px 20px;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #1a1a2e;
+        }
+
+        .comparison-table tbody tr:nth-of-type(even) {
+            background-color: #16213e;
+        }
+
+        .comparison-table tbody tr:last-of-type {
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .comparison-table .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .myth-buster {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.05) 100%);
+            border-left: 4px solid #e74c3c;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .myth-buster h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
+        .truth-reveal {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%);
+            border-left: 4px solid #2ecc71;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .truth-reveal h3 {
+            color: #2ecc71;
+            margin-top: 0;
+        }
+
+        .download-pdf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #ff8c00;
+            color: #ff8c00;
+            background: transparent;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .download-pdf-button:hover {
+            background: rgba(255, 140, 0, 0.1);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 15, 1) 100%);
+            color: #808080;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚡ OSTEOPATIA</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../downloads.html">Downloads</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>🌴 Buriti: O Tesouro Metabólico da Amazônia</h1>
+            <p>Descubra a verdade científica por trás desta fruta amazônica — seu poder real está no metabolismo, não em mitos hormonais.</p>
+            <a href="buriti.pdf" download class="download-pdf-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Baixar PDF
+            </a>        
+        </section>
+
+        <section class="content-section">
+            <div class="myth-buster">
+                <h3>❌ O Mito Popular</h3>
+                <p>Frequentemente promovido como um "segredo" para aumento natural dos glúteos, pele dourada e fonte de estrogênio vegetal, o buriti ganhou fama baseada em promessas que não correspondem à realidade científica.</p>
+            </div>
+
+            <div class="truth-reveal">
+                <h3>✓ A Verdade Científica</h3>
+                <p>O verdadeiro poder do buriti é <strong>metabólico e nutricional</strong>, não hormonal. Esta fruta amazônica oferece benefícios concretos baseados em sua composição única de nutrientes e gorduras saudáveis.</p>
+            </div>
+
+            <h2>Características Nutricionais do Buriti</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>🍬 Baixo Teor de Açúcar</h4>
+                    <p>Índice glicêmico extremamente baixo de apenas <strong>35</strong>, bem inferior à cenoura (45) e banana (60). Ideal para controle glicêmico.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>💚 Rico em Gorduras Boas</h4>
+                    <p>Composição rica em ômegas, semelhante ao azeite de oliva, que combatem inflamação e melhoram a sensibilidade à insulina.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>⚡ Energia Estável</h4>
+                    <p>Sem picos de insulina, garantindo energia constante por várias horas, perfeito para metabolismo equilibrado.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>🥕 Ultra-Rico em Vitamina A</h4>
+                    <p>Contém até <strong>10 vezes mais</strong> provitamina A do que a cenoura — proteção poderosa para visão e pele.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>🌰 Fonte de Vitamina E</h4>
+                    <p>Quantidade comparável a um punhado de amêndoas, oferecendo proteção antioxidante às membranas celulares.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h4>🛡️ Proteção Solar Natural</h4>
+                    <p>Carotenoides que protegem a pele dos danos solares de dentro para fora — proteção interna real.</p>
+                </div>
+            </div>
+
+            <h2>Comparativo: Buriti vs Outros Alimentos</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Buriti</th>
+                        <th>Comparação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Índice Glicêmico</td>
+                        <td class="highlight">35 (muito baixo)</td>
+                        <td>Cenoura: 45 | Banana: 60</td>
+                    </tr>
+                    <tr>
+                        <td>Provitamina A</td>
+                        <td class="highlight">10x mais</td>
+                        <td>que a cenoura</td>
+                    </tr>
+                    <tr>
+                        <td>Vitamina E</td>
+                        <td class="highlight">Similar</td>
+                        <td>a um punhado de amêndoas</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de Gordura</td>
+                        <td class="highlight">Ômegas saudáveis</td>
+                        <td>Semelhante ao azeite de oliva</td>
+                    </tr>
+                    <tr>
+                        <td>Efeito Metabólico</td>
+                        <td class="highlight">Energia estável</td>
+                        <td>Sem picos de insulina</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h3>🔬 Composição Nutricional Detalhada</h3>
+                <p><strong>Vitaminas Lipossolúveis:</strong> A provitamina A e vitamina E do buriti são antioxidantes poderosos que protegem pele, visão e membranas celulares contra danos oxidativos.</p>
+                <p><strong>Fitoesteróis:</strong> Compostos vegetais que ajudam a reduzir ligeiramente o colesterol LDL (colesterol ruim), promovendo saúde cardiovascular.</p>
+                <p><strong>Ácidos Graxos:</strong> Perfil de gorduras predominantemente composto por ômegas que acalmam processos inflamatórios, apoiam a função hepática e melhoram a resposta insulínica.</p>
+                <p><strong>Carotenoides:</strong> Pigmentos naturais que oferecem fotoproteção à pele, reduzindo danos causados pela radiação UV de forma sistêmica.</p>
+            </div>
+
+            <h2>Benefícios Metabólicos Comprovados</h2>
+
+            <div class="info-box">
+                <p><strong>1. Controle Glicêmico Superior:</strong> Com IG de apenas 35, o buriti não causa os temidos picos de glicose e insulina, mantendo os níveis energéticos estáveis ao longo do dia.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>2. Ação Anti-Inflamatória:</strong> Os ômegas presentes combatem inflamações crônicas de baixo grau, associadas a diversas doenças metabólicas.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>3. Suporte Hepático:</strong> As gorduras saudáveis auxiliam o fígado em suas funções de desintoxicação e metabolismo lipídico.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>4. Melhora da Sensibilidade à Insulina:</strong> Contribui para uma melhor resposta celular à insulina, fundamental para prevenção de resistência insulínica.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>5. Proteção Antioxidante Completa:</strong> A combinação de vitaminas A e E oferece defesa abrangente contra radicais livres em tecidos diversos.</p>
+            </div>
+
+            <h2>Conclusão Científica</h2>
+
+            <div class="truth-reveal">
+                <p><strong>O buriti é um superalimento genuíno</strong>, mas não pelos motivos propagados popularmente. Seu valor reside em:</p>
+                <p>✓ Perfil nutricional excepcional com baixo impacto glicêmico<br>
+                ✓ Riqueza em antioxidantes lipossolúveis (vitaminas A e E)<br>
+                ✓ Gorduras saudáveis com ação anti-inflamatória<br>
+                ✓ Benefícios metabólicos baseados em mecânica nutricional precisa</p>
+                <p><strong>Em resumo:</strong> Esqueça os mitos hormonais. O buriti é uma ferramenta metabólica poderosa, rica em boas gorduras e ultra-antioxidante, cuja eficácia é fundamentada em ciência sólida, não em promessas mágicas.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Nota importante:</strong> As informações apresentadas são baseadas em evidências científicas sobre composição nutricional e metabolismo. Não substituem orientação médica ou nutricional individualizada. 🌿</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Osteopatia. Todos os direitos reservados.</p>
+        <p>Desenvolvido com tecnologia de ponta para promover sua saúde e bem-estar.</p>
+    </footer>
+</body>
+</html>
